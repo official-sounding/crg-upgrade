@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>StatsBook Tool</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row mb-4 my-ui-text">
+                <div class="col">
+                <h1>CRG Upgrade Utility</h1>
+                <p>Use this program to import your old (3.9.5) Teams XML and export new (4.0.0) Teams JSON</p>
+                <span id="newVersionWarning"></span>
+                </div>
+            </div>
+            <div class="row mb-4 my-ui-text">
+                <div class="col">
+                    <div id="drag-file">
+                        <input type="file" name="file" id="file-select" class="inputfile" accept=".xml" />
+                        <label for="file-select">Choose a file <span class="box__dragndrop"> or drag it here.</span></label>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5>File Info</h5>
+                    <div id="file-info-box">
+                        No File Loaded
+                    </div>
+                    <div id="refresh-holder">
+                        <button id="refresh" type="button" class="btn btn-secondary btn-sm hidden">Refresh (f5)</button>
+                        <button id="download" type="button" class="btn btn-primary btn-sm hidden">Download JSON file</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                        <pre id="output-box"></pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            require('../dist/index.js')
+        </script>
+    </body>
+</html>

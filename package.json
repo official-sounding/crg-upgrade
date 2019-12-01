@@ -1,0 +1,39 @@
+{
+  "name": "crg-upgrade",
+  "version": "1.0.0",
+  "description": "upgrade 3.9.5 XML files to 4.0.0 JSON files",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jasmine-ts --config=jasmine.json",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "npm run build && electron ./dist/app.js",
+    "pack": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder"
+  },
+  "author": "Peter Elliott <pelliott@official-sounding.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/downloadjs": "^1.4.1",
+    "@types/lodash": "^4.14.149",
+    "@types/mousetrap": "^1.6.3",
+    "@types/xml2js": "^0.4.5",
+    "electron-builder": "^21.2.0",
+    "eslint": "^6.7.2",
+    "typescript": "^3.7.2",
+    "ts-node": "^8.5.4"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "date-fns": "^2.8.1",
+    "devtron": "^1.4.0",
+    "downloadjs": "^1.4.7",
+    "electron": "^7.1.2",
+    "electron-is-dev": "^1.1.0",
+    "jquery": "^3.4.1",
+    "mousetrap": "^1.6.3",
+    "popper.js": "^1.16.0",
+    "xml2js": "^0.4.22"
+  }
+}
