@@ -5,6 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "build": "tsc",
+    "postbuild": "copyfiles -u 1 src/**/*.html css/**/*.css dist",
     "watch": "tsc -w",
     "test": "jasmine-ts --config=jasmine.json",
     "lint": "tslint -c tslint.json -p tsconfig.json",
@@ -19,7 +20,10 @@
     "@types/lodash": "^4.14.149",
     "@types/mousetrap": "^1.6.3",
     "@types/xml2js": "^0.4.5",
+    "copyfiles": "^2.1.1",
     "electron-builder": "^21.2.0",
+    "devtron": "^1.4.0",
+    "electron": "^7.1.2",
     "eslint": "^6.7.2",
     "typescript": "^3.7.2",
     "ts-node": "^8.5.4"
@@ -27,13 +31,54 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "date-fns": "^2.8.1",
-    "devtron": "^1.4.0",
     "downloadjs": "^1.4.7",
-    "electron": "^7.1.2",
     "electron-is-dev": "^1.1.0",
     "jquery": "^3.4.1",
     "mousetrap": "^1.6.3",
     "popper.js": "^1.16.0",
     "xml2js": "^0.4.22"
+  },
+  "build": {
+    "appId": "crg-upgrade",
+    "productName": "CRG Upgrade Tool",
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "build",
+      "output": "artifacts"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    },
+    "win": {
+      "target": {
+        "target": "NSIS",
+        "arch": [
+          "x64",
+          "ia32"
+        ]
+      }
+    },
+    "nsis": {
+      "license": "LICENSE"
+    }
   }
 }

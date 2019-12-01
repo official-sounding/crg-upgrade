@@ -17,7 +17,7 @@ const createWindow = () => {
     })
 
     win.loadURL(formaturl({
-        pathname: join(__dirname, '../src/index.html'),
+        pathname: join(__dirname, './index.html'),
         protocol: 'file',
         slashes: true,
     }))
