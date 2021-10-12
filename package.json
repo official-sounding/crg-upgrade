@@ -23,7 +23,7 @@
     "copyfiles": "^2.1.1",
     "electron-builder": "^21.2.0",
     "devtron": "^1.4.0",
-    "electron": "^7.1.2",
+    "electron": "^11.5.0",
     "eslint": "^6.7.2",
     "typescript": "^3.7.2",
     "ts-node": "^8.5.4"
